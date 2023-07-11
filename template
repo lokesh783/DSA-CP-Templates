@@ -6,39 +6,38 @@
 // select - ctrl sft l
 #include <bits/stdc++.h>
 #include <iostream>
-#define ll long long
+#define int long long
 using namespace std;
-#define f(i, a, b) for (ll i = a; i < b; i++)
+#define f(i, a, b) for (int i = a; i < b; i++)
+#define rf(i, a, b) for(int i = a; i >= b; i--)
 
 // vectors
-#define vll vector<ll>
-#define vvll vector<vector<ll>>
+#define vi vector<int>
+#define vvi vector<vector<int>>
+#define vpii vector<pair<int,int>>
+#define vvpii vector<pair<int,int>>
+#define all(v) v.begin(),v.end()
 #define pb push_back
+#define mxe(v) *max_element(all(v))
+#define mne(v) *min_element(all(v))
+
+// maps
+#define mpii map<int,int>
+
+// sets
+#define sti set<int>
 
 #define yup cout << "YES";
 #define shit cout << "NO";
 #define el endl;
 #define do2 cout <<
 #define lo cin >>
-ll mod = 1e9 + 7;
+int mod = 1e9 + 7;
 
-ll GCD(ll a, ll b){if (a == 0)return b;return GCD(b % a, a);}
-ll LCM(ll a, ll b){ll val = GCD(a, b);return a * b / (val * val);}
-
-ll sum_of_dig(ll n) { ll ans = 0, rem; while (n) { rem = n % 10; n /= 10; ans += rem; } return ans; }
-
-// O(sqrt(N))
-bool is_prime(ll nimboda) { if (nimboda == 1) return false; if (nimboda == 2 || nimboda == 3) return true; f(i, 2, sqrt(nimboda) + 1) { if (nimboda % i == 0) return false; }return true;}
-
-// O(NLOGN)
-void SieveOfEratosthenes(vector<bool> mp){ll n = 1e9;mp[0] = mp[1] = false;for (ll p = 2; p * p <= n; p++){if (mp[p] == true){for (ll i = p * p; i <= n; i += p)mp[i] = false;}}}
-
-// O(1)
-bool ky_2_ki_pow_hai(ll n){if (n == 0)return false;return (ceil(log2(n)) == floor(log2(n)));}
-
-bool cmp(pair<ll, ll> &a, pair<ll, ll> &b) { return a.second > b.second; }
-void inA(ll arr[], ll n) { f(i, 0, n) cin >> arr[i]; }
-void inV(vector<ll> &arr, ll n) { f(i, 0, n) cin >> arr[i]; }
+int GCD(int a, int b){if (a == 0)return b;return GCD(b % a, a);}
+int LCM(int a, int b){int val = GCD(a, b);return a * b / (val * val);}
+void inA(int arr[], int n) { f(i, 0, n) cin >> arr[i]; }
+void inV(vector<int> &arr, int n) { f(i, 0, n) cin >> arr[i]; }
 
 
 void apna_ans_aayega()
@@ -47,9 +46,9 @@ void apna_ans_aayega()
 }
 
 // MAin GFUnnction
-int main()
+int32_t main()
 {
-    ll kitni_baar;
+    int kitni_baar;
     cin >> kitni_baar;
     while (kitni_baar--)
     {
