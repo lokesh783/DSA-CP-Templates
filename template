@@ -15,10 +15,11 @@ using namespace std;
 #define f(i, a, b) for (int i = a; i < b; i++)
 #define rf(i, a, b) for (int i = a; i >= b; i--)
 
-
 // vectors
 #define vi vector<int>
 #define vvi vector<vector<int>>
+#define vc vector<char>
+#define vvc vector<vector<char>>
 #define vpii vector<pair<int, int>>
 #define vvpii vector<pair<int, int>>
 #define all(v) v.begin(), v.end()
@@ -38,25 +39,41 @@ using namespace std;
 #define el endl;
 #define do2 cout <<
 #define lo cin >>
-// int mod = 1e9 + 7;
 
-int GCD(int a, int b){if (a == 0)return b;return GCD(b % a, a);}
-int LCM(int a, int b){if (!a || !b)return 1;int val = GCD(a, b);return a * b / (val);}
+// variables
+#define SIZE 300001
+int mod = 1e9 + 7;
+int fact[SIZE];
+
+int findPower(int n, int times) { if(times == 0) return 1; int ans = findPower(n, times>>1); ans = (ans * ans) % mod; if(times & 1) ans = (ans * n) % mod; return ans; }
+int GCD(int a, int b) {if (a == 0) return b; return GCD(b % a, a); }
+int LCM(int a, int b) {if(!a || !b) return 1; int val = GCD(a, b); return (a * b) / val;}
 void inA(int arr[], int n) { f(i, 0, n) cin >> arr[i]; }
 void inV(vector<int> &arr, int n) { f(i, 0, n) cin >> arr[i]; }
+void buildFactArray() { fact[0] = 1; f(i,1,SIZE) fact[i] = (fact[i-1]*i) % mod;}
+int modInverse(int A, int M) { return findPower(A, M - 2); }
 
-void apna_ans_aayega(int tc)
+int npr(int n, int r) {
+    int num = fact[n], den = fact[r];
+    return (num * modInverse(den, mod)) % mod;
+}
+
+void apna_ans_aayega()
 {
+    int n;cin>>n;
+    
 }
 int32_t main()
 {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
-    int kitni_baar = 1, tc = 0;
+    buildFactArray();
+    
+    int kitni_baar = 1;
     cin >> kitni_baar;
     while (kitni_baar--)
     {
-        apna_ans_aayega(++tc);
+        apna_ans_aayega();
     }
     return 0;
 }
