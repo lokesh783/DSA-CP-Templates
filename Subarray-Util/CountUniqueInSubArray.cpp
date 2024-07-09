@@ -1,3 +1,5 @@
+#include "bits/stdc++.h"
+using namespace std;
 
 int countSumOfNumberOfUniqueValuesInAllSubArray(int n, vector<int>&v) {
     map<int, vector<int>> positions;
