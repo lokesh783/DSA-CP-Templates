@@ -4,7 +4,7 @@
 // Baujiraj ki daya se
 // search - ctrl f
 // select - ctrl sft l
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 
 // policy DS headers
 // #include <ext/pb_ds/assoc_container.hpp>
@@ -61,14 +61,20 @@ int npr(int n, int r) {
 void apna_ans_aayega()
 {
     int n;cin>>n;
-    
+    cout << n << endl;
+    map<int, int> mp;
+    mp[2] = 3;
+    // for(auto [key, val] : mp) cout << key;
 }
 int32_t main()
 {
+    cout << "Test ";
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     
     int kitni_baar = 1;
+    cout << "Enter test case\n";
+
     cin >> kitni_baar;
     while (kitni_baar--)
     {
