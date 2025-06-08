@@ -52,11 +52,8 @@ void inA(int arr[], int n) { f(i, 0, n) cin >> arr[i]; }
 void inV(vector<int> &arr, int n) { f(i, 0, n) cin >> arr[i]; }
 void buildFactArray() { fact[0] = 1; f(i,1,SIZE) fact[i] = (fact[i-1]*i) % mod;}
 int modInverse(int A, int M) { return findPower(A, M - 2); }
-
-int npr(int n, int r) {
-    int num = fact[n], den = fact[r];
-    return (num * modInverse(den, mod)) % mod;
-}
+int npr(int n, int r) {int num = fact[n], den = fact[r];return (num * modInverse(den, mod)) % mod;}
+int ncr(int n, int r) {int num = fact[n], den = (fact[r] * fact[n-r]) % mod;return (num * modInverse(den, mod)) % mod;}
 
 void apna_ans_aayega()
 {
