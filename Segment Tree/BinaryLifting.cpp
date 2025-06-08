@@ -1,3 +1,9 @@
+#include <bits/stdc++.h>
+using namespace std;
+// Binary Lifting is a technique used to efficiently find the Lowest Common Ancestor (LCA) of two nodes in a tree.
+// It allows us to preprocess the tree in such a way that we can answer LCA queries in logarithmic time.
+// This implementation assumes a tree represented as an adjacency list, where each node has a unique identifier.    
+
 class BinaryLifting {
     vector<vector<int>> binaryParents;
 
